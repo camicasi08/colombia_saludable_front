@@ -1,0 +1,82 @@
+<!-- <div class="row">
+   <ol>
+       <li *ngFor="let ip of ips">{{ip.nombre}}</li>
+   </ol>
+</div> -->
+
+<div class='row'>
+        <div class="form-group col col-md-2 col-xs-2">
+                <label>Tipo de gráfico</label>
+                <select class="form-control" name="typeChart" [(ngModel)]="typeChart">
+                    <option value="bar">Barra</option>
+                    <option value="line">Línea</option>
+                    <option value="pie">Pie</option>
+                </select>
+            </div>
+    <div class="form-group col col-md-2 col-xs-2">
+        <label>Agrupar por</label>
+        <select class="form-control" name="group" [(ngModel)]="group">
+            <option value="year">Año</option>
+            <option value="month">Mes</option>
+            <option value="day">Día</option>
+        </select>
+    </div>
+
+    <!-- <div *ngIf="group != 'ips' "class="form-group col col-md-3  col-md-3">
+        <label>IPS</label>
+        <select class="form-control" name="ips" [(ngModel)]="selectedIps">
+            <option *ngFor="let ip of ipss" [value]="ip.key_ips">{{ip.nombre}}</option>
+        </select>
+    </div> -->
+    
+    <div class="form-group col col-md-2 col-xs-2">
+        <label>Operación</label>
+        <select class="form-control" name="operation" [(ngModel)]="operation">
+            <option value="avg">Promedio</option>
+            <option value="total">Total</option>
+        </select>
+    </div> 
+    <div class="form-group col col-md-2 col-xs-2">
+        <br>
+        <button class="btn btn-hero-success" (click)="send($event)">
+            Consultar
+        </button>
+    </div>
+    <div class="form-group col col-md-2 col-xs-2">
+            <br>
+            <button class="btn btn-hero-info" (click)="clear($event)">
+                Limpiar
+            </button>
+        </div>
+</div>
+<div class="row">
+    
+    <div *ngIf="group=='month' || group == 'day'" class="form-group col col-md-3">
+        <label>Año</label>
+        <select class="form-control" name="year" [(ngModel)]="year">
+            <option *ngFor="let year of years" [value]="year.year">{{year.year}}</option>
+        </select>
+    </div>
+    <div *ngIf="group == 'day'" class="form-group col col-md-3">
+        <label>Mes</label>
+        <select class="form-control" name="month" [(ngModel)]="month">
+            <option value=null></option>
+           <option value=1>Enero</option>
+           <option value=2>Febrero</option>
+           <option value=3>Marzo</option>
+           <option value=4>Abril</option>
+           <option value=5>Mayo</option>
+           <option value=6>Junio</option>
+           <option value=7>Julio</option>
+           <option value=8>Agosto</option>
+           <option value=9>Septiembre</option>
+           <option value=10>Octubre</option>
+           <option value=11>Noviembre</option>
+           <option value=12>Diciembre</option>
+        </select>
+    </div>
+    
+</div>
+<div *ngIf="chart">
+    <canvas id="canvas" #chart>{{ chart }}</canvas>
+</div>
