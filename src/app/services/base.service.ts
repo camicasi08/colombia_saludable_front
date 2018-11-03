@@ -62,6 +62,15 @@ export class BaseService {
 
     }
 
+    public getMedicines(data){
+        let params : URLSearchParams = new URLSearchParams();
+        let requestOptions = new RequestOptions();
+        params.append('limit', data.limit);
+        requestOptions.params = params;
+      
+        return this.http.get(this.host+"medicines", requestOptions);
+    }
+
 
 
     private headers() {

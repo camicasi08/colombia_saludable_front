@@ -9,6 +9,7 @@ import { TimesModule } from './time/times.module';
 import { HttpModule } from '@angular/http';
 import { PricesModule } from './price/prices.module';
 import { RecipesModule } from './recipes/recipes.module';
+import { CytodemoModule } from './graph/graph.module';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -23,8 +24,8 @@ const PAGES_COMPONENTS = [
     TimesModule,
     HttpModule,
     PricesModule,
-    RecipesModule
-  
+    RecipesModule,
+    CytodemoModule
     
   ],
   declarations: [

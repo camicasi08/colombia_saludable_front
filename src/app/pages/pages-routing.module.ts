@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TimesComponent } from './time/times.component';
 import { PricesComponent } from './price/prices.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { CytodemoComponent } from './graph/graph.component';
 
 
 const routes: Routes = [{
@@ -27,6 +28,10 @@ const routes: Routes = [{
     {
       path: 'recipes',
       component: RecipesComponent
+    },
+    {
+      path: 'graph',
+      component: CytodemoComponent
     },
 
     {

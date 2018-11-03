@@ -25,7 +25,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: "Medicinas recetadas",
         link: '/pages/recipes'
+      },
+      {
+        title: "Grafo",
+        link: '/pages/graph'
       }
+
+    
       
     ]
   }
